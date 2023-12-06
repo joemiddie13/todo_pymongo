@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>FlaskApp</title>
 </head>
 <body>
@@ -30,6 +31,12 @@
 
 			<p><button type="submit">Submit</button></p>
 		</form>
+    <hr>
+    {% for todo in todos %}
+        <div class="todo">
+            <p class="{{ todo.priority }}">{{ todo.content }} <em>({{ todo.priority }})</em></p>
+        </div>
+    {% endfor %}
 	</div>
 </body>
 </html>
