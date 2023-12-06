@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+</head>
+<body>
+    <h1>FlaskTODO</h1>
+	<hr>
+	<div class="content">
+		<form action="/" method="post">
+			<p>
+				<label>Todo:
+				  <input type="text" name="content" placeholder="Todo Content">
+        </label>
+			</p>
+
+			<div>
+        <p>Priority:</p>
+				  
+        <p><label>
+          <input name="priority" required type="radio" value="Important">
+          Important</label></p>
+				
+        <p><label>
+          <input name="priority" required type="radio" value="Unimportant">
+          Unimportant</label></p>
+				
+        </div>
+
+			<p><button type="submit">Submit</button></p>
+		</form>
+	</div>
+</body>
+</html>
