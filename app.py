@@ -17,5 +17,10 @@ def index():
         todos.insert_one({'content': content, 'priority': degree})
         return redirect(url_for('index'))
 
-    all_todos = todos.find() # Add this line outside the if block! 
-    return render_template('index.html', todos=all_todos) # add todos here! 
+    all_todos = todos.find() 
+    return render_template('index.html', todos=all_todos)
+
+@app.post('/<id>/delete/')
+def delete(id):
+    todos.delete_one({"_id": ObjectId(id)})
+    return redirect(url_for('index'))
