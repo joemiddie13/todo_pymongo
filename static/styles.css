@@ -9,7 +9,7 @@ body {
   margin: 40px auto;
   padding: 20px;
   background-color: white;
-  border: 1px solid #333;
+  border: 1px solid #535252;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
 }
@@ -21,7 +21,7 @@ h1 {
 .todo {
 	padding: 20px;
 	margin: 10px;
-	background-color: #382121;
+	background-color: #472c2c;
 }
 
 button, input[type=submit] {

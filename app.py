@@ -2,10 +2,24 @@ from flask import Flask, render_template, request, url_for, redirect
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime, timezone
+from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
 
+
+uri = "mongodb+srv://rockotest:rockotest1@rockotest.1hzo4qs.mongodb.net/?retryWrites=true&w=majority"
+
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
 app = Flask(__name__)
 
-client = MongoClient('localhost', 27017)
+# client = MongoClient('localhost', 27017)
 
 db = client.flask_db
 todos = db.todos
